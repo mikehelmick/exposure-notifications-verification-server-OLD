@@ -30,7 +30,7 @@ func (db *Database) RunMigrations(ctx context.Context) error {
 		{
 			ID: "00001-CreateUsers",
 			Migrate: func(tx *gorm.DB) error {
-				logger.Infof("db migrations: createing users table")
+				logger.Infof("db migrations: creating users table")
 				return tx.AutoMigrate(&User{}).Error
 			},
 			Rollback: func(tx *gorm.DB) error {
@@ -40,7 +40,7 @@ func (db *Database) RunMigrations(ctx context.Context) error {
 		{
 			ID: "00002-CreateVerificationCodes",
 			Migrate: func(tx *gorm.DB) error {
-				logger.Infof("db migrations: createing verificaion codes table")
+				logger.Infof("db migrations: creating verificaion codes table")
 				return tx.AutoMigrate(&VerificationCode{}).Error
 			},
 			Rollback: func(tx *gorm.DB) error {
